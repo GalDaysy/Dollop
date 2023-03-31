@@ -1,0 +1,16 @@
+/**
+ * @return The {@link Context} of the test project.
+ */
+private Context getTestContext()
+{
+    try
+    {
+        Method getTestContext = ServiceTestCase.class.getMethod("getTestContext");
+        return (Context) getTestContext.invoke(this);
+    }
+    catch (final Exception exception)
+    {
+        exception.printStackTrace();
+        return null;
+    }
+}
